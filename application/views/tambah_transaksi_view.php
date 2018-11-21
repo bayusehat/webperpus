@@ -1,11 +1,11 @@
 <br>
 <form method="post" action="<?php echo base_url(); ?>index.php/t_transaksi/simpan/">
   <?php
-  if(!empty($notif)){
-    echo '<div class="alert alert-info>"';
-    echo $notif;
-    echo '</div>';
-  }
+    $notif = $this->session->flashdata('notif');
+
+    if(!empty($notif)){
+      echo '<div class="alert alert-success">'.$notif.'</div>';
+    }
   ?>
 <div class="form-group">
     <label for="exampleInputPassword1">No. Transaksi</label>
@@ -38,7 +38,7 @@
 
       if(!empty($jdl)){
       	foreach ($jdl as $key) {
-      		echo "<option value='".$key->id_buku."'>".$key->id_buku."</option>";
+      		echo "<option value='".$key->id_buku."'>".$key->judul."</option>";
       	}
       	
       } 

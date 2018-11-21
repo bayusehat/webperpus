@@ -82,8 +82,12 @@ class M_admin extends CI_Model{
 		}
 	}
 	public function get_data_transaksi(){
-		return $this->db->order_by('id_transaksi','ASC')
-		                ->get('transaksi')	                
+		return $this->db->select('transaksi.*,buku.*,daftar.*')
+						->from('transaksi')
+						->join('buku','buku.id_buku=transaksi.judul')
+						->join('daftar','id_anggota=transaksi.anggota')
+						->order_by('id_transaksi','ASC')
+		                ->get()	                
 		                ->result();
 	}
 	public function hapus_transaksi($id_transaksi){

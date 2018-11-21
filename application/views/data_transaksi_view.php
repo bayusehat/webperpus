@@ -42,7 +42,7 @@
 									
 									<tr class="active">
 									    <td><?php echo $no; ?></td>
-										<td><?php echo $data->anggota; ?></td>
+										<td><?php echo $data->nama; ?></td>
 										<td><?php echo $data->judul; ?></td>
 										<td><?php echo $data->tgl_pinjam; ?></td>
 										<td><?php echo $data->tgl_kembali; ?></td>
@@ -62,9 +62,11 @@
 										</td>
 
 									</tr>
-								<?php endforeach; ?>
 									<?php
-									 $no++; ?>
+									 $no++; 
+									 ?>
+								<?php endforeach; ?>
+
 								</table>
 							</div>
 						</div>

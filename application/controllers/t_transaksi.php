@@ -26,21 +26,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  			if($this->form_validation->run()==TRUE){
  				$id_buku=$this->uri->segment(3);
  				if($this->m_transaksi->tambah($id_buku)==TRUE){
- 					$data['notif'] = 'Transaksi telah ditambahkan';
+ 					$this->session->set_flashdata('notif', 'Transaksi berhasil ditambahkan');
  					$data['main_view'] = 'tambah_transaksi_view';
  					$this->load->view('template',$data);
  				}else{
- 					$data['notif'] = 'Transaksi gagal ditambahkan';
+ 					$this->session->set_flashdata('notif', 'Transaksi gagal ditambahkan!');
  					$data['main_view'] = 'tambah_transaksi_view';
  					$this->load->view('template',$data);
  				}
  			}else{
- 					$data['notif'] = 'Error';
+ 					$this->session->set_flashdata('notif', 'Error');
  					$data['main_view'] = 'tambah_transaksi_view';
  					$this->load->view('template',$data);
  			}
  		}else{
- 					$data['notif'] = validation_errors();
+ 					$this->session->set_flashdata('notif', validation_errors());
  					$data['main_view'] = 'tambah_transaksi_view';
  					$this->load->view('template',$data);
  		}
