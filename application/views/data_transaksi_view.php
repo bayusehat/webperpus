@@ -5,14 +5,9 @@
 					  	<div class="panel panel-default">
 							<div class="panel-heading">Data Transaksi</div>
 					    	<div class="panel-body">
-					    	
-					    	
-					    	<form method="post" action="">
-
-					    	</form>
-                            
-								<table border="0" cellpadding="4" cellspacing="0" class="datatable table table-striped table-bordered">
-									<tr>
+								<table id="projectdashboard" class="table table-striped table-bordered nowrap" style="width:100%">
+									<thead>
+										<tr>
 										<th>No</th>
 										<th>Nama Anggota</th>
 										<th>Judul Buku</th>
@@ -22,6 +17,8 @@
 										<th>Denda</th>
 										<th>Aksi</th>
 									</tr>
+									</thead>
+									
 									<?php
 									$no = 1;
 									$alert ="'Apakah anda yakin menghapus data ini?'";
@@ -39,7 +36,7 @@
 									$denda = $telat * 500;
 									?>
 
-									
+									<tbody>
 									<tr class="active">
 									    <td><?php echo $no; ?></td>
 										<td><?php echo $data->nama; ?></td>
@@ -51,7 +48,7 @@
 										<td>    
 											<!-- <a href="<?php echo base_url(); ?>index.php/admin/get_detil/<?php echo $data->id_transaksi; ?>" class="btn btn-block btn-info btn-sm"><i class="glyphicon glyphicon-search"></i> Lihat</a>
 											<a href="<?php echo base_url(); ?>index.php/admin/hapus_transaksi/<?php echo $data->id_transaksi; ?>" class="btn btn-block btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</a> -->
-											<?php 
+										<?php 
 											if($data->status == 'Sudah dikembalikan'){
 											echo '
 											<a href="#" class="btn btn-block btn-default btn-sm"><i class="glyphicon glyphicon-check"></i></a>';
@@ -62,6 +59,7 @@
 										</td>
 
 									</tr>
+								</tbody>
 									<?php
 									 $no++; 
 									 ?>

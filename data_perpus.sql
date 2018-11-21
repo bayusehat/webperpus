@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2018 at 04:23 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Waktu pembuatan: 21 Nov 2018 pada 14.34
+-- Versi server: 10.1.34-MariaDB
+-- Versi PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -33,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`username`, `password`, `level`) VALUES
@@ -43,7 +45,7 @@ INSERT INTO `admin` (`username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
@@ -53,20 +55,20 @@ CREATE TABLE `buku` (
   `penerbit` varchar(20) NOT NULL,
   `tahun` int(10) NOT NULL,
   `lokasi` varchar(20) NOT NULL,
-  `stok` int(20) NOT NULL
+  `stok` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`id_buku`, `judul`, `pengarang`, `penerbit`, `tahun`, `lokasi`, `stok`) VALUES
-(1, 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 2010, 'a1', 9);
+(1, 'aaaaaaa', 'aaaaaaaa', 'aaaaaaaaa', 2010, 'a1', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftar`
+-- Struktur dari tabel `daftar`
 --
 
 CREATE TABLE `daftar` (
@@ -79,7 +81,7 @@ CREATE TABLE `daftar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `daftar`
+-- Dumping data untuk tabel `daftar`
 --
 
 INSERT INTO `daftar` (`id_anggota`, `nama`, `tgl`, `alamat`, `telp`, `kelas`) VALUES
@@ -91,7 +93,7 @@ INSERT INTO `daftar` (`id_anggota`, `nama`, `tgl`, `alamat`, `telp`, `kelas`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -105,52 +107,70 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data untuk tabel `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `no_transaksi`, `anggota`, `judul`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+(1, '20181121032442', '8', '1', '2018-11-21', '2018-11-21', 'Sudah dikembalikan'),
+(2, '20181121035413', '8', '1', '2018-11-21', '2018-11-21', 'Sudah dikembalikan'),
+(3, '20181121040415', '8', '1', '2018-11-21', '2018-11-21', 'Sudah dikembalikan'),
+(4, '20181121040818', '9', '1', '2018-11-21', '2018-11-24', 'Sudah dikembalikan'),
+(5, '20181121040818', '9', '1', '2018-11-21', '2018-11-24', 'Sudah dikembalikan'),
+(6, '20181121041428', '9', '1', '2018-11-21', '2018-11-22', 'Sudah dikembalikan'),
+(7, '20181121041703', '8', '1', '2018-11-21', '2018-11-21', 'Sudah dikembalikan'),
+(8, '20181121042006', '9', '1', '2018-11-21', '2018-11-21', 'Sudah dikembalikan');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
--- Indexes for table `daftar`
+-- Indeks untuk tabel `daftar`
 --
 ALTER TABLE `daftar`
   ADD PRIMARY KEY (`id_anggota`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `buku`
+-- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
   MODIFY `id_buku` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `daftar`
+-- AUTO_INCREMENT untuk tabel `daftar`
 --
 ALTER TABLE `daftar`
   MODIFY `id_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

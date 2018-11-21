@@ -7,20 +7,23 @@
 					    	<form method="post" action="">
 					    	</form>
 
-								<table border="0" cellpadding="4" cellspacing="0" class="datatable table table-striped table-bordered">
-									<tr>
+								<table id="projectdashboard" class="table table-striped table-bordered nowrap" style="width:100%">
+									<thead>
+										<tr>
 										<th>No</th>
 										<th>Nama</th>
 										<th>Kelas</th>
 										<th>Telepon</th>
 										<th>Aksi</th>
 									</tr>
+									</thead>
+									
 									<?php
 									$no = 1;
 									$alert ="'Apakah anda yakin menghapus data ini?'";
 									foreach ($anggota as $data) {
 										echo'
-									
+									<tbody>
 									<tr class="active">
 									    <td>'.$no.'</td>
 										<td>'.$data->nama.'</td>
@@ -31,6 +34,7 @@
 											<a href="'.base_url().'index.php/admin/hapus/'.$data->id_anggota.'" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</a>
 										</td>
 									</tr>
+									</tbody>
 									';
 									$no++;
 								   }

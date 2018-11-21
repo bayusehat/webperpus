@@ -40,11 +40,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	
  	public function data_anggota(){
  		if($this->session->userdata('logged_in')==TRUE){
- 			$data['main_view'] = 'data_anggota_view';
+      if($this->session->userdata('type') == '0'){
+        $data['main_view'] = 'data_anggota_view';
 
- 			$data['anggota'] = $this->m_admin->get_data_pendaftar();
- 			$this->load->view('template',$data);
- 		}
+        $data['anggota'] = $this->m_admin->get_data_pendaftar();
+        $this->load->view('template',$data);
+      }else{
+        $this->session->set_flashdata('notif', 'Superadmin Only!');
+        redirect('admin');
+      }
+ 		}else{
+      redirect('admin','refresh');
+    }
  	}
  	public function logout(){
  		$data=array(
@@ -116,15 +123,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function data_buku(){
 
  		if($this->session->userdata('logged_in')==TRUE){
-
+       if($this->session->userdata('type') == '0'){
  			$data['main_view'] = 'data_buku_view';
 
  			$data['buku'] = $this->m_admin->get_data_buku();
 
  			$this->load->view('template',$data); 		
  		}else{
+      $this->session->set_flashdata('notif', 'Superadmin Only!');
  			redirect('admin');
  		}
+  }else{
+    redirect('admin','refresh');
+  }
  	}
  	public function get_detil_buku(){
  		if($this->session->userdata('logged_in')==TRUE){

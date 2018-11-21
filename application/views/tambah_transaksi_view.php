@@ -1,5 +1,6 @@
 <br>
-<form method="post" action="<?php echo base_url(); ?>index.php/t_transaksi/simpan/">
+<div>
+  <form method="post" action="<?php echo base_url(); ?>index.php/t_transaksi/simpan/">
   <?php
     $notif = $this->session->flashdata('notif');
 
@@ -20,9 +21,9 @@
       $anggota = $this->db->query("SELECT id_anggota,nama FROM daftar")->result();
 
       if(!empty($anggota)){
-      	foreach ($anggota as $data) {
-      		echo "<option value='".$data->id_anggota."'>".$data->nama."</option>";
-      	}
+        foreach ($anggota as $data) {
+          echo "<option value='".$data->id_anggota."'>".$data->nama."</option>";
+        }
       }
       ?>
       
@@ -37,10 +38,10 @@
       $jdl = $this->db->query("SELECT id_buku,judul FROM buku")->result();
 
       if(!empty($jdl)){
-      	foreach ($jdl as $key) {
-      		echo "<option value='".$key->id_buku."'>".$key->judul."</option>";
-      	}
-      	
+        foreach ($jdl as $key) {
+          echo "<option value='".$key->id_buku."'>".$key->judul."</option>";
+        }
+        
       } 
       ?>
       
@@ -59,9 +60,10 @@
   <div class="form-group">
     <label for="exampleInputPassword1">Status</label>
     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="status" 
-    value="Belum dikembalikan">
+    value="Belum dikembalikan" readonly="">
   </div>
   <div class="input-group">
   <input type="submit" name="submit" id="submit" value="Tambah" class="btn btn-info">
   </div>
   </form>
+</div>

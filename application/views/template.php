@@ -1,6 +1,8 @@
 <!DOCTYPE>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
@@ -15,6 +17,8 @@
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Sistem Informasi Perpustakaan</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" >
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 </head>
 <body>
 <div id="wrapper">
@@ -94,15 +98,12 @@
                         </li>
                         <?php }
                         ?>
-                        <?php 
-                        if($this->session->userdata('type')=='1'){?>
 
                         <li>
                             <a href="<?php echo base_url();?>index.php/admin/get_data_transaksi/"><i class="glyphicon glyphicon-search"></i> Peminjaman</a>
                         
                         </li>
-                        <?php }
-                        ?>
+            
                         <?php
                         if($this->session->userdata('type') == '0'){?>
 
@@ -138,6 +139,19 @@
     <script src="<?php echo base_url(); ?>assets/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url(); ?>assets/dist/js/sb-admin-2.js"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/dist/js/sb-admin-2.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function() {
+            $('#projectdashboard').DataTable({
+              "lengthMenu": [[5, 10, 50, -1], [5, 10, 25, "All"]]
+            });
+    } );
+    </script>
 </body>
 </html>

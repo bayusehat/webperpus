@@ -5,8 +5,16 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+
             <!-- /.row -->
             <div class="row">
+            <?php
+                $notif = $this->session->flashdata('notif');
+
+                if(!empty($notif)){
+                    echo '<div class="alert alert-danger">'.$notif.'</div>';
+                }
+            ?>
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -26,7 +34,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?php echo base_url();?>index.php/admin/data_anggota">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -52,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?php echo base_url();?>index.php/admin/data_buku">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -78,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?php echo base_url();?>index.php/admin/data_transaksi">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
