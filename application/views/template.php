@@ -1,19 +1,19 @@
 <!DOCTYPE>
 <html>
 <head>
-    <link href="<?php echo base_url(); ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url(); ?>vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url(); ?>vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url(); ?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Sistem Informasi Perpustakaan</title>
 </head>
 <body>
@@ -124,20 +124,20 @@
 
         </div>
     </div>
-    <script src="<?php echo base_url(); ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url(); ?>vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url(); ?>vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="<?php echo base_url(); ?>vendor/raphael/raphael.min.js"></script>
-    <script src="<?php echo base_url(); ?>vendor/morrisjs/morris.min.js"></script>
-    <script src="<?php echo base_url(); ?>data/morris-data.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/vendor/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url(); ?>dist/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url(); ?>assets/dist/js/sb-admin-2.js"></script>
 </body>
 </html>
