@@ -17,6 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		}
  	}
  	public function home(){
+    $data['title'] = 'Dashboard';
  		$data['main_view'] = 'home_view';
  		$this->load->view('template',$data);
  	}
@@ -41,6 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function data_anggota(){
  		if($this->session->userdata('logged_in')==TRUE){
       if($this->session->userdata('type') == '0'){
+         $data['title'] = 'Data Anggota';
         $data['main_view'] = 'data_anggota_view';
 
         $data['anggota'] = $this->m_admin->get_data_pendaftar();
@@ -63,6 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function get_detil(){
  		if($this->session->userdata('logged_in')==TRUE){
  			$id_anggota=$this->uri->segment(3);
+       $data['title'] = 'Detail Anggota';
  			$data['detil'] = $this->m_admin->get_detil($id_anggota);
  			$data['main_view'] = 'detil_anggota_view';
 
@@ -125,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		if($this->session->userdata('logged_in')==TRUE){
        if($this->session->userdata('type') == '0'){
  			$data['main_view'] = 'data_buku_view';
-
+       $data['title'] = 'Data Buku';
  			$data['buku'] = $this->m_admin->get_data_buku();
 
  			$this->load->view('template',$data); 		
@@ -141,8 +144,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		if($this->session->userdata('logged_in')==TRUE){
  			$id_buku=$this->uri->segment(3);
  			$data['detil'] = $this->m_admin->detil_buku($id_buku);
+       $data['title'] = 'Detail Buku';
  			$data['main_view'] = 'detil_buku_view';
-
  			$this->load->view('template',$data);
 
  		}else{
@@ -201,7 +204,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		if($this->session->userdata('logged_in')==TRUE){
       if($this->session->userdata('type') == 0){
    			$data['main_view'] = 'data_admin_view';
-
+         $data['title'] = 'Data Admin';
    			$data['admin'] = $this->m_admin->get_data_admin();
    			$this->load->view('template',$data);
       }else{
@@ -223,7 +226,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	}
  	public function get_data_transaksi(){
  		if($this->session->userdata('logged_in')==TRUE){
-
+       $data['title'] = 'Data Transaksi';
  			$data['main_view'] = 'data_transaksi_view';
  			$data['transaksi'] = $this->m_admin->get_data_transaksi();
  			$this->load->view('template',$data);

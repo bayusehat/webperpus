@@ -16,7 +16,7 @@
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <title>Sistem Informasi Perpustakaan</title>
+    <title>Sistem Informasi Perpustakaan | <?php echo $title;?></title>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" >
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 </head>
