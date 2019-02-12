@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url();?>index.php/admin/data_transaksi">
+                        <a href="<?php echo base_url();?>index.php/admin/get_data_transaksi">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="<?php echo base_url();?>index.php/admin/data_admin">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

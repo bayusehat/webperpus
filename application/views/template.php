@@ -48,7 +48,7 @@
                    
                    
 
-                   <li><a href="<?php echo base_url(); ?>index.php/t_transaksi/">Tambah transaksi</a>
+                   <li><a href="<?php echo base_url(); ?>index.php/t_transaksi/">Tambah Peminjaman</a>
                    </li>
                    <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -100,7 +100,7 @@
                         ?>
 
                         <li>
-                            <a href="<?php echo base_url();?>index.php/admin/get_data_transaksi/"><i class="glyphicon glyphicon-search"></i> Peminjaman</a>
+                            <a href="<?php echo base_url();?>index.php/admin/get_data_transaksi/"><i class="glyphicon glyphicon-list-alt"></i> Peminjaman</a>
                         
                         </li>
             

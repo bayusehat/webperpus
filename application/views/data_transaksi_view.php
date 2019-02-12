@@ -5,7 +5,7 @@
 					  	<div class="panel panel-default">
 							<div class="panel-heading">Data Transaksi</div>
 					    	<div class="panel-body">
-								<table id="projectdashboard" class="table table-striped table-bordered nowrap" style="width:100%">
+								<table id="projectdashboard" class="table table-striped table-bordered" style="width:100%">
 									<thead>
 										<tr>
 										<th>No</th>

@@ -7,7 +7,7 @@
 					    	<form method="post" action="">
 					    	</form>
 
-								<table id="projectdashboard" class="table table-striped table-bordered nowrap" style="width:100%">
+								<table id="projectdashboard" class="table table-striped table-bordered" style="width:100%">
 									<thead>
 										<tr>
 										<th>No</th>

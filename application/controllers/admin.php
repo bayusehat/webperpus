@@ -199,10 +199,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	public function data_admin(){
  		if($this->session->userdata('logged_in')==TRUE){
- 			$data['main_view'] = 'data_admin_view';
+      if($this->session->userdata('type') == 0){
+   			$data['main_view'] = 'data_admin_view';
 
- 			$data['admin'] = $this->m_admin->get_data_admin();
- 			$this->load->view('template',$data);
+   			$data['admin'] = $this->m_admin->get_data_admin();
+   			$this->load->view('template',$data);
+      }else{
+        redirect('admin','refresh');
+      }
  		}
  	}
  	public function hapus_admin(){
